@@ -11,7 +11,7 @@ export const metadata = {
 function WorkoutPlaylistFallback() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-6">
-      <div className="aspect-video w-full animate-pulse rounded-xl bg-kauai-sand/30" />
+      <div className="mx-auto max-w-sm aspect-[9/16] w-full animate-pulse rounded-xl bg-kauai-sand/30" />
     </div>
   );
 }

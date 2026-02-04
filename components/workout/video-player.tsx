@@ -18,7 +18,7 @@ export function VideoPlayer({ video }: VideoPlayerProps) {
   }, [video.id]);
 
   return (
-    <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-kauai-sand/20 shadow-lg">
+    <div className="relative mx-auto max-w-sm aspect-[9/16] w-full overflow-hidden rounded-xl bg-kauai-sand/20 shadow-lg">
       <video
         ref={videoRef}
         key={video.id}

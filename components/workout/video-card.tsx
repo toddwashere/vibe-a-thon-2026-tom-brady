@@ -21,13 +21,13 @@ export function VideoCard({ video, isActive, onClick }: VideoCardProps) {
         isActive && "bg-kauai-ocean/20 ring-1 ring-kauai-ocean/40",
       )}
     >
-      <div className="relative flex h-16 w-28 shrink-0 overflow-hidden rounded-md bg-kauai-sand/30">
+      <div className="relative flex h-28 w-16 shrink-0 overflow-hidden rounded-md bg-kauai-sand/30">
         {video.thumbnail ? (
           <Image
             src={video.thumbnail}
             alt=""
-            width={112}
-            height={64}
+            width={64}
+            height={112}
             className="h-full w-full object-cover"
           />
         ) : (
