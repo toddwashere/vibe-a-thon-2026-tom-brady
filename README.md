@@ -58,7 +58,7 @@ A Next.js application with workout video playlists for injury prevention, brande
 
 ### Workout Playlist
 
-The **Stretch & Recover** workout playlist is at `/workout`. Add video files to `public/videos/` and update `lib/workout-videos.ts` with titles, descriptions, and durations. Expected filenames: `warm-up.mp4`, `hamstring-stretch.mp4`, `hip-flexor.mp4`, `shoulder-mobility.mp4`, `cool-down.mp4`.
+The **Stretch & Recover** workout playlist is at `/workout`. Add video files to `public/videos/` and update `lib/workout-videos.ts` with titles, descriptions, and durations. Video files are gitignored (too large for git); add them locally or host on a CDN for deployment.
 
 ---
 
