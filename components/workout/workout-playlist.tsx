@@ -35,7 +35,7 @@ export function WorkoutPlaylist() {
           </div>
         </div>
         <aside className="w-full shrink-0 lg:w-96">
-          <div className="sticky top-4 rounded-xl border border-kauai-ocean/20 bg-white/60 p-4 shadow-lg backdrop-blur-sm">
+          <div className="sticky top-4 rounded-xl border border-kauai-ocean/20 bg-white/70 p-4 shadow-lg backdrop-blur-sm">
             <PlaylistSidebar
               videos={workoutVideos}
               activeVideoId={activeVideo.id}
