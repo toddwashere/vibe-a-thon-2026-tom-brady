@@ -50,3 +50,8 @@ Thumbs.db
 # Misc
 *.pem
 .next/trace
+
+# Video files (too large for git; add to public/videos/ locally or use CDN)
+*.mp4
+*.mov
+*.webm

@@ -15,7 +15,7 @@ export const workoutVideos: WorkoutVideo[] = [
     description:
       "Tom guides you through essential warm-up movements to get your body ready and prevent injury.",
     duration: "5:30",
-    videoSrc: "/videos/warm-up.mp4",
+    videoSrc: "/videos/tom_brady_yoga.mp4",
     order: 1,
   },
   {
