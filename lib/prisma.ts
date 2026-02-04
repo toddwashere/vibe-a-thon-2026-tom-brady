@@ -1,14 +1,23 @@
 import { PrismaClient } from "@prisma/client";
 
-const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
+export function isDatabaseConfigured(): boolean {
+  return !!process.env.DATABASE_URL?.trim();
+}
 
-export const prisma =
-  globalForPrisma.prisma ??
-  new PrismaClient({
-    log:
-      process.env.NODE_ENV === "development"
-        ? ["query", "error", "warn"]
-        : ["error"],
-  });
+const globalForPrisma = globalThis as unknown as {
+  prisma: PrismaClient | undefined;
+};
 
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+export const prisma: PrismaClient | undefined = isDatabaseConfigured()
+  ? (globalForPrisma.prisma ??
+    new PrismaClient({
+      log:
+        process.env.NODE_ENV === "development"
+          ? ["query", "error", "warn"]
+          : ["error"],
+    }))
+  : undefined;
+
+if (prisma && process.env.NODE_ENV !== "production") {
+  globalForPrisma.prisma = prisma;
+}

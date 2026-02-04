@@ -1,6 +1,7 @@
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import { isDatabaseConfigured } from "@/lib/prisma";
 import { LoginForm } from "@/components/auth/login-form";
 import {
   Card,
@@ -17,6 +18,10 @@ export default async function LoginPage({
 }: {
   searchParams: Promise<{ callbackUrl?: string; error?: string }>;
 }) {
+  if (!isDatabaseConfigured()) {
+    redirect("/");
+  }
+
   const session = await auth();
   const params = await searchParams;
 

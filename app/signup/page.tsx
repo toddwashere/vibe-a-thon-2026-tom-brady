@@ -1,5 +1,6 @@
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
+import { isDatabaseConfigured } from "@/lib/prisma";
 import Link from "next/link";
 import { SignupForm } from "@/components/auth/signup-form";
 import {
@@ -13,6 +14,10 @@ import {
 import { Button } from "@/components/ui/button";
 
 export default async function SignupPage() {
+  if (!isDatabaseConfigured()) {
+    redirect("/");
+  }
+
   const session = await auth();
 
   if (session) {

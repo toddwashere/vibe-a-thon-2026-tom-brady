@@ -6,7 +6,7 @@ A Next.js application with workout video playlists for injury prevention, brande
 
 - **Framework:** Next.js 15 (App Router)
 - **Language:** TypeScript
-- **Database:** PostgreSQL with Prisma ORM
+- **Database:** PostgreSQL with Prisma ORM (optional for deployment)
 - **Styling:** Tailwind CSS
 - **UI Components:** Shadcn UI
 - **Testing:** Jest with React Testing Library
@@ -59,6 +59,10 @@ A Next.js application with workout video playlists for injury prevention, brande
 ### Workout Playlist
 
 The **Stretch & Recover** workout playlist is at `/workout`. Add video files to `public/videos/` and update `lib/workout-videos.ts` with titles, descriptions, and durations. Video files use Git LFS for storage.
+
+### Database-less deployment
+
+You can deploy without a database. Omit `DATABASE_URL` from your deployment environment. The app will run with the workout playlist only; sign-in and sign-up will be hidden. To enable auth, add `DATABASE_URL` and run migrations.
 
 ---
 
