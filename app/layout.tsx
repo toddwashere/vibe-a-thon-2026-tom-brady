@@ -15,7 +15,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className="antialiased bg-transparent">
+        <div
+          className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/hawaii-bg.jpg')" }}
+          aria-hidden
+        />
+        <div
+          className="fixed inset-0 -z-10 bg-white/30 backdrop-blur-[1px]"
+          aria-hidden
+        />
         <AuthSessionProvider>{children}</AuthSessionProvider>
       </body>
     </html>

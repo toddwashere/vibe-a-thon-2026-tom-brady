@@ -18,7 +18,7 @@ function WorkoutPlaylistFallback() {
 
 export default function WorkoutPage() {
   return (
-    <div className="min-h-screen bg-kauai-gradient">
+    <div className="min-h-screen">
       <WorkoutHeader />
       <main>
         <Suspense fallback={<WorkoutPlaylistFallback />}>
