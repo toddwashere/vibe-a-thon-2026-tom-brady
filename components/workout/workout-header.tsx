@@ -6,10 +6,10 @@ export function WorkoutHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
         <Link href="/" className="flex items-center gap-2 font-display">
           <span className="text-2xl font-bold tracking-tight text-kauai-ocean">
-            TB12
+            GOAT Yoga TM
           </span>
           <span className="hidden text-kauai-forest sm:inline">
-            Stretch & Recover
+            with Tom and Michelle
           </span>
         </Link>
         <p className="hidden text-sm italic text-kauai-sand-dark sm:block">

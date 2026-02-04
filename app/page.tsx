@@ -10,7 +10,9 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-8">
-      <h1 className="mb-8 text-4xl font-bold">TB12 Stretch & Recover</h1>
+      <h1 className="mb-8 text-4xl font-bold">
+        GOAT Yoga TM, with Tom and Michelle
+      </h1>
       {hasDatabase && session ? (
         <div className="flex flex-col items-center gap-4">
           <p className="text-muted-foreground">

@@ -3,9 +3,9 @@ import "./globals.css";
 import { AuthSessionProvider } from "@/components/providers/session-provider";
 
 export const metadata: Metadata = {
-  title: "TB12 Stretch & Recover",
+  title: "GOAT Yoga TM, with Tom and Michelle",
   description:
-    "Tom Brady's stretching routines to prevent sports injuries. Stay in the game. Stretch like a champion.",
+    "GOAT Yoga with Tom and Michelle. Stay in the game. Stretch like a champion.",
 };
 
 export default function RootLayout({
