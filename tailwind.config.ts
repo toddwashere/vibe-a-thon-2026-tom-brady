@@ -9,12 +9,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        display: ["Cormorant Garamond", "Georgia", "serif"],
+        sans: ["DM Sans", "system-ui", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
+        kauai: {
+          ocean: "#0077B6",
+          "ocean-light": "#00B4D8",
+          sand: "#F4E4BC",
+          "sand-dark": "#8B7355",
+          forest: "#2D6A4F",
+          sunset: "#E85D04",
+          cream: "#E8DCC4",
+        },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

@@ -3,8 +3,9 @@ import "./globals.css";
 import { AuthSessionProvider } from "@/components/providers/session-provider";
 
 export const metadata: Metadata = {
-  title: "CoolProject",
-  description: "A Next.js app with authentication",
+  title: "TB12 Stretch & Recover",
+  description:
+    "Tom Brady's stretching routines to prevent sports injuries. Stay in the game. Stretch like a champion.",
 };
 
 export default function RootLayout({

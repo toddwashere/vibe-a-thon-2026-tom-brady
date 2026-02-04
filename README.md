@@ -1,6 +1,6 @@
-# CoolProject
+# TB12 Stretch & Recover
 
-A Next.js application with TypeScript, Prisma ORM, Tailwind CSS, Shadcn UI, Jest, and email/password authentication. Local development uses PostgreSQL in a Docker container.
+A Next.js application with workout video playlists for injury prevention, branded in the voice of Tom Brady with a Kauai-inspired theme. Includes TypeScript, Prisma ORM, Tailwind CSS, Shadcn UI, Jest, and email/password authentication.
 
 ## Tech Stack
 
@@ -21,34 +21,44 @@ A Next.js application with TypeScript, Prisma ORM, Tailwind CSS, Shadcn UI, Jest
 ## Quick Start
 
 1. **Clone and install dependencies:**
+
    ```bash
    npm install
    ```
 
 2. **Set up environment variables:**
+
    ```bash
    cp .env.example .env
    ```
+
    Edit `.env` and ensure:
    - `DATABASE_URL` points to your PostgreSQL instance (see Docker section below)
    - `AUTH_SECRET` is set (generate with `openssl rand -base64 32`)
 
 3. **Start PostgreSQL (Docker):**
+
    ```bash
    npm run docker:up
    ```
 
 4. **Run database migrations:**
+
    ```bash
    npm run db:migrate:dev
    ```
 
 5. **Start the development server:**
+
    ```bash
    npm run dev
    ```
 
 6. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Workout Playlist
+
+The **Stretch & Recover** workout playlist is at `/workout`. Add video files to `public/videos/` and update `lib/workout-videos.ts` with titles, descriptions, and durations. Expected filenames: `warm-up.mp4`, `hamstring-stretch.mp4`, `hip-flexor.mp4`, `shoulder-mobility.mp4`, `cool-down.mp4`.
 
 ---
 
@@ -56,19 +66,21 @@ A Next.js application with TypeScript, Prisma ORM, Tailwind CSS, Shadcn UI, Jest
 
 ### Docker (PostgreSQL)
 
-| Command | Description |
-|---------|-------------|
-| `npm run docker:up` | Start PostgreSQL container in the background |
-| `npm run docker:down` | Stop and remove the PostgreSQL container |
-| `docker compose ps` | Check if the PostgreSQL container is running |
-| `docker compose logs postgres` | View PostgreSQL container logs |
+| Command                        | Description                                  |
+| ------------------------------ | -------------------------------------------- |
+| `npm run docker:up`            | Start PostgreSQL container in the background |
+| `npm run docker:down`          | Stop and remove the PostgreSQL container     |
+| `docker compose ps`            | Check if the PostgreSQL container is running |
+| `docker compose logs postgres` | View PostgreSQL container logs               |
 
 **Manual Docker commands:**
+
 - Start: `docker compose up -d`
 - Stop: `docker compose down`
 - View logs: `docker compose logs -f postgres`
 
 **Connection details** (from `docker-compose.yml`):
+
 - Host: `localhost`
 - Port: `6767`
 - User: `coolproject`
@@ -80,53 +92,57 @@ A Next.js application with TypeScript, Prisma ORM, Tailwind CSS, Shadcn UI, Jest
 
 ### Database (Prisma)
 
-| Command | Description |
-|---------|-------------|
-| `npm run db:generate` | Generate Prisma Client (runs automatically on `npm install`) |
-| `npm run db:push` | Push schema changes to DB without creating migrations (dev prototyping) |
-| `npm run db:migrate` | Apply pending migrations (production) |
-| `npm run db:migrate:dev` | Create a new migration and apply it (development) |
-| `npm run db:studio` | Open Prisma Studio (visual DB editor) |
-| `npm run db:seed` | Run the seed script |
+| Command                  | Description                                                             |
+| ------------------------ | ----------------------------------------------------------------------- |
+| `npm run db:generate`    | Generate Prisma Client (runs automatically on `npm install`)            |
+| `npm run db:push`        | Push schema changes to DB without creating migrations (dev prototyping) |
+| `npm run db:migrate`     | Apply pending migrations (production)                                   |
+| `npm run db:migrate:dev` | Create a new migration and apply it (development)                       |
+| `npm run db:studio`      | Open Prisma Studio (visual DB editor)                                   |
+| `npm run db:seed`        | Run the seed script                                                     |
 
 **Creating a migration:**
+
 ```bash
 npm run db:migrate:dev -- --name add_user_table
 ```
 
 **Resetting the database** (drops all data):
+
 ```bash
 npx prisma migrate reset
 ```
 
 **Viewing your data:**
+
 ```bash
 npm run db:studio
 ```
+
 Opens Prisma Studio at `http://localhost:5555`.
 
 ---
 
 ### Application
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start Next.js development server |
-| `npm run build` | Build for production |
-| `npm run start` | Run production server |
-| `npm run lint` | Run ESLint |
-| `npm run test` | Run Jest tests |
-| `npm run test:watch` | Run Jest in watch mode |
-| `npm run test:coverage` | Run Jest with coverage report |
+| Command                 | Description                      |
+| ----------------------- | -------------------------------- |
+| `npm run dev`           | Start Next.js development server |
+| `npm run build`         | Build for production             |
+| `npm run start`         | Run production server            |
+| `npm run lint`          | Run ESLint                       |
+| `npm run test`          | Run Jest tests                   |
+| `npm run test:watch`    | Run Jest in watch mode           |
+| `npm run test:coverage` | Run Jest with coverage report    |
 
 ---
 
 ## Environment Variables
 
-| Variable | Description |
-|----------|-------------|
+| Variable       | Description                                                                        |
+| -------------- | ---------------------------------------------------------------------------------- |
 | `DATABASE_URL` | PostgreSQL connection string (e.g. `postgresql://user:pass@localhost:5432/dbname`) |
-| `AUTH_SECRET` | Secret for Auth.js (generate with `openssl rand -base64 32`) |
+| `AUTH_SECRET`  | Secret for Auth.js (generate with `openssl rand -base64 32`)                       |
 
 ---
 

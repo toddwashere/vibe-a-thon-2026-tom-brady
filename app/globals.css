@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -56,5 +58,19 @@
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
+    font-family: "DM Sans", system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-kauai-gradient {
+    background: linear-gradient(
+      135deg,
+      #e8f4f8 0%,
+      #f4e4bc 40%,
+      #e8dcc4 70%,
+      #d4e8dc 100%
+    );
+    background-attachment: fixed;
   }
 }

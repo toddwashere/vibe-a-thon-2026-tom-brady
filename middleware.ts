@@ -7,7 +7,12 @@ export default auth((req) => {
   const isLoggedIn = !!req.auth;
   const { pathname } = req.nextUrl;
 
-  if (pathname === "/" || pathname === "/login" || pathname === "/signup") {
+  if (
+    pathname === "/" ||
+    pathname === "/login" ||
+    pathname === "/signup" ||
+    pathname.startsWith("/workout")
+  ) {
     return;
   }
 
